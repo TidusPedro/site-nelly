@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversário, Nelly ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsivo -->
+  <style>
+    body {
+      background-color: #0d0b1a;
+      color: #e0d7ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #c084fc;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1a152b;
+      border: 2px solid #6d28d9;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px auto;
+      width: 90%;
+      font-size: 20px;
+      box-shadow: 0 0 15px rgba(128,0,255,0.3);
+      min-height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background-color: #6d28d9;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      flex: 1 1 40%;
+      max-width: 180px;
+    }
+
+    button:hover {
+      background-color: #8b5cf6;
+    }
+
+    .message {
+      font-size: 22px;
+      margin-top: 40px;
+      color: #e9d5ff;
+      padding: 0 10px;
+    }
+
+    .youtube {
+      margin-top: 30px;
+    }
+
+    .youtube button {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    /* Responsivo para celular */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .card {
+        font-size: 18px;
+        padding: 20px;
+        width: 100%;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 12px;
+        max-width: none;
+      }
+
+      .message {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ 20 Motivos por que eu te amo ✨</h1>
+    
+    <div class="card" id="motivo">Carregando...</div>
+    
+    <div class="buttons">
+      <button onclick="anterior()">⬅️ Anterior</button>
+      <button onclick="proximo()">Próximo ➡️</button>
+    </div>
+
+    <h2 class="message">🎂 Feliz Aniversário, meu bem! 🎂</h2>
+    <p>
+  Que seu dia seja tão especial quanto você é para mim. <br>
+  Fico feliz de estar presente em sua vida com tanto tempo. <br>
+  Te desejo tudo de melhor na vida, você merece. <br>
+  Eu não poderia querer alguém melhor pra ter crescido e passado a adolescência comigo do que você. <br>
+  És perfeita em tudo. <br>
+  E quando algo der errado e começar a chover, estarei aqui com um guarda-chuva te esperando. 💜
+</p>
+
+    <div class="youtube">
+      <a href="https://youtu.be/iojYDSjKK00?si=j76UQIMyLNNxj06c" target="_blank">
+        <button>🎶 Ver vídeo no YouTube</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const motivos = [
+      "Você me faz sorrir nos dias mais escuros.",
+      "Seu abraço é meu lugar de conforto.",
+      "Adoro como você me entende sem eu falar nada.",
+      "Você é minha melhor amiga e meu amor.",
+      "Seu sorriso alegra até o Pedro criança que vive em mim.",
+      "Você me apoia em todos os momentos.",
+      "Com você, tudo fica mais divertido, até cair de bicicleta.",
+      "Você é linda por dentro e por fora.",
+      "Você acredita em mim.",
+      "Você é única e especial.",
+      "Você me inspira a ser melhor.",
+      "Seu jeito carinhoso me encanta.",
+      "Você transforma qualquer momento em algo incrível.",
+      "Adoro suas manias engraçadas, de sempre ta errada.",
+      "Você sempre me faz sentir amado.",
+      "Você é paciente comigo.",
+      "Você tem um coração enorme.",
+      "Você é minha paz e minha aventura.",
+      "Adoro como você me faz rir.",
+      "Porque eu simplesmente não consigo não te amar."
+    ];
+
+    let index = 0;
+    const motivoDiv = document.getElementById("motivo");
+
+    function mostrarMotivo() {
+      motivoDiv.style.opacity = "0";
+      setTimeout(() => {
+        motivoDiv.textContent = motivos[index];
+        motivoDiv.style.opacity = "1";
+      }, 300);
+    }
+
+    function proximo() {
+      index = (index + 1) % motivos.length;
+      mostrarMotivo();
+    }
+
+    function anterior() {
+      index = (index - 1 + motivos.length) % motivos.length;
+      mostrarMotivo();
+    }
+
+    // Inicializa
+    mostrarMotivo();
+  </script>
+</body>
+</html>
